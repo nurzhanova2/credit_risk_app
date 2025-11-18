@@ -1,0 +1,16 @@
+# Виртуальное окружение
+venv/
+.venv/
+
+# Python кеши
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+results.csv
+
+models/*.pkl
