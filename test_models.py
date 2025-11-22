@@ -7,7 +7,7 @@ from config import FEATURE_NAMES
 paths = [
     "models/log_reg.pkl",          
     "models/random_forest.pkl",    
-    # "models/xgboost.pkl",        
+    "models/xgboost.pkl",        
 ]
 
 for p in paths:

@@ -63,10 +63,6 @@ MODEL_PATHS = {
 RESULTS_FILE = "results.csv"
 
 def risk_level(prob_default: float) -> str:
-    """
-    Классификация уровня риска по вероятности дефолта.
-    Пороговые значения можно подстроить под анализ.
-    """
     if prob_default < 0.15:
         return "Низкий"
     elif prob_default < 0.40:

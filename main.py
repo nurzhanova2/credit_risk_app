@@ -1,4 +1,11 @@
-# main.py
+import warnings 
+
+warnings.filterwarnings(
+    "ignore",
+    message="X does not have valid feature names, but .* was fitted with feature names",
+    category=UserWarning,
+)
+
 from models import load_models, predict_for_client
 from io_utils import (
     read_clients_from_csv,
@@ -31,7 +38,7 @@ def main():
             print("\nРезультаты прогноза:")
             for name, res in results.items():
                 print(f"- Модель: {name}")
-                print(f"  Вероятность дефолта: {res['prob_default']:.4f}")
+                print(f"  Вероятность дефолта: {res['prob_default']:.8f}")
                 print(f"  Уровень риска: {res['risk_level']}")
 
             append_result_to_file(client, results)
@@ -55,7 +62,7 @@ def main():
 
                 for name, res in results.items():
                     print(
-                        f"- {name}: p(default)={res['prob_default']:.4f}, "
+                        f"- {name}: p(default)={res['prob_default']:.8f}, "
                         f"риск={res['risk_level']}"
                     )
                 append_result_to_file(client, results)
